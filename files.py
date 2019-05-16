@@ -108,8 +108,10 @@ def main():
     print()
     infile.close()
     # answer the following questions:
-    # what type is data?
+    # what type is data? 
+    '''data is a list'''
     # how is it different from the data in Method 1?
+    '''in method 1 data is a string'''
     # Do the strings have escape characters?
 
     # write a for loop that uses data as the sequence and prints out
