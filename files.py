@@ -35,12 +35,19 @@ def main():
     print()
 
     # What errors did you get? Add a comment here with the output:
+    '''the file does not exist'''
+    #'''No such file or directory: 'myFile.txt''''
 
     # The default mode for open() is 'r', so the statements above are really
     # the same code. Logically a file must exist in order for us to read it.
 
     # Now write the same code but change the mode to 'a'
     # your code here
+    try:
+        infile = open(fileName,'a')
+    except Exception as error:
+        print(type(error), error)
+    print()
 
     # close the file
 
@@ -51,13 +58,17 @@ def main():
 
     # Now write the same code but change the mode to 'w'
     # your code here. 
-
+    try:
+        infile = open(fileName,'w')
+    except Exception as error:
+        print(type(error), error)
+    print()
     # close the file
 
     # run the program then open the text file in a text editor and view 
     # the contents
     # add a comment here describing the contents:
-
+    '''the file is blank'''
 
     '''
     - element access
@@ -72,10 +83,15 @@ def main():
     # open your book to p. 161 and replicate the code at the center of 
     # the page that opens, reads, and prints the file. Use "infile" again
     # as the file handle
-
+    
+    fname=input("Enter file name: ")
+    infile=open(fname,"r")
+    data=infile.read()
+    print(data)
+    
     # compare the program output with what you see in a text editor.
     # are they the same? Add your answer in a comment here:
-
+    '''the output is a message "no such file"'''
     # add a print statement that prints the length of data
     # this demonstrates that data is one big string.
     # you might try counting the characters to see if the length includes
@@ -86,13 +102,11 @@ def main():
 
     # Method 2: readlines()
     # uncomment the code below and run this program
-    '''
     infile = open(fileName)
     data = infile.readlines()
     print(data)
     print()
     infile.close()
-    '''
     # answer the following questions:
     # what type is data?
     # how is it different from the data in Method 1?
